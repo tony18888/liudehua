@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ext3.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+ 
+  </head>
+  
+  <body>
+       <div style="float: left;margin-right:  10px">
+       <select id="first" size="10" multiple="multiple">
+          <option value="选项1">选项1</option>
+          <option value="选项2">选项2</option>
+          <option value="选项3">选项3</option>
+          <option value="选项4">选项4</option>
+          <option value="选项5">选项5</option>
+          <option value="选项6">选项6</option>
+          <option value="选项7">选项7</option>
+          <option value="选项8">选项8</option>
+       </select>
+       </div>
+        <div style="float: left;margin-right:  10px">
+            <input id="leftone" type="button" value="------>"/><br><br>
+            <input id="leftAll"  type="button" value="====>"/><br><br>
+            <input id="rightone"  type="button" value="<------"/><br><br>
+            <input id="rightall"  type="button" value="<===="/><br>
+       </div>
+       <select id="second" size="10" multiple="multiple">
+          <option value="选项9">选项9</option>
+       </select>
+  </body>
+  <script type="text/javascript">
+       // <input id="leftone" type="button" value="------>"/><br><br>
+      document.getElementById("leftone").onclick=function(){
+    	   //1.左边所有的option.
+    	    var leftOptions=document.getElementById("first").getElementsByTagName("option");
+    	   //2.遍历所有的option的  判断是否被选中
+    	   for(var i=0;i<leftOptions.length;i++){
+    		     if(leftOptions[i].selected){
+    		    	 var v=leftOptions[i];
+    		    	 var o=document.getElementById("second").appendChild(leftOptions[i--]);
+    		    	 
+    		     }
+    	   }
+      }
+  </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

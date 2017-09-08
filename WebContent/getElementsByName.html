@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>getElementById.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+     <form action="test.html" name="form1" method="post">
+        <input type="text" name="tname" value="国庆65周年_1" id="tid_1" />
+        <input type="text" name="tname" value="国庆65周年_2" id="tid_2"/>
+        <input type="text" name="tname" value="国庆65周年_3" id="tid_3"/>
+        <input type="button" name="ok" value="保存"/>
+     </form>
+    <script type="text/javascript">
+      //通过元素的name="tname"属性获取所有元素的引用
+      var tnames=document.getElementsByName("tname");
+
+      //测试该数据的长度
+      //alert(tnames.length);
+      //遍历元素,输出所有value属性的值
+       /* for(var i=0;i<tnames.length;i++){
+    	     alert(tnames[i].value);
+       } */
+      //为每个文本框增加onchange事件,当值改变时,输出改变的值
+       for(var i=0;i<tnames.length;i++){
+    	    tnames[i].onchange=function(){
+    	    	  alert(this.value);
+    	    }
+       }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     
+  </body>
+</html>

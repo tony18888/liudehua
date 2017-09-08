@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>replaceNode.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+     您喜欢的城市:<br>
+     <ul id="city">
+       <li id="bj" value="beijing">北京</li>
+       <li id="sh" value="shanghai">上海</li>
+       <li id="cq" value="chongqing">重庆</li>
+     </ul>
+     <input  type="button" value="往ul下增加新的子节点"/>
+  </body>
+  <script type="text/javascript">
+      //在<ul>标签下增加节点<li id="tj" value="tianjin">天津</li>
+      document.getElementsByTagName("input")[0].onclick=function(){
+    	      //1.创建一个li元素节点 <li></li>
+    	       var li=document.createElement("li");
+    	       //<li id="tj" value="tianjin"></li>
+    	       li.setAttribute("id","tj");
+    	       li.setAttribute("value","tianjin");
+    	       //2.创建文本节点  天津
+    	       var text=document.createTextNode("天津");
+    	       
+    	       //3.把文本节点追加到li节点中.<li id="tj" value="tianjin">天津</li>
+    	       li.appendChild(text);
+    	       
+    	       document.getElementById("city").appendChild(li);
+      }
+  </script>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ext1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+   <script type="text/javascript">
+       window.onload=function(){ //页面加载完毕后执行该函数
+            document.getElementById("addUser").onclick=function(){
+    	           var name=document.getElementById("name").value;
+    	           var email=document.getElementById("email").value;
+    	           var phone=document.getElementById("phone").value;
+    	           //1.创建tr标签
+    	           var tr=document.createElement("tr");
+    	           //2.创建4个td
+    	           var td1=document.createElement("td");
+    	           var td2=document.createElement("td");
+    	           var td3=document.createElement("td");
+    	           var td4=document.createElement("td");
+    	           var a=document.createElement("a");
+    	           //3.创建4个文本
+    	           var nameText=document.createTextNode(name);
+    	           var emailText=document.createTextNode(email);
+    	           var phoneText=document.createTextNode(phone);
+    	           var deleteText=document.createTextNode("Delete");
+    	           //4.追加
+    	           td1.appendChild(nameText);
+    	           td2.appendChild(emailText);
+    	           td3.appendChild(phoneText);
+    	           a.appendChild(deleteText);
+    	           td4.appendChild(a);
+    	           //5.追加
+    	           tr.appendChild(td1);
+    	           tr.appendChild(td2);
+    	           tr.appendChild(td3);
+    	           tr.appendChild(td4);
+    	           document.getElementById("usertable").getElementsByTagName("tbody")[0].appendChild(tr);
+    	           a.onclick=function(){
+    	        	     deleteStudent(this);
+    	           }
+             }
+    	     var as=document.getElementsByTagName("a");
+    	     for(var i=0;i<as.length;i++){
+    	    	   as[i].onclick=function(){
+    	    		   deleteStudent(this);
+    	    	   }
+    	     }
+       }
+       
+       function deleteStudent(v){
+    	      var tr=v.parentNode.parentNode;
+    	      var tbody=v.parentNode.parentNode.parentNode;
+    	      var name=tr.getElementsByTagName("td")[0].firstChild.nodeValue; 
+    	      if(confirm("确定要删除["+name+"]")){
+    	    	     tbody.removeChild(tr);
+    	      }
+    	     
+       }
+   </script>
+  </head>
+  
+  <body>
+  <div style="margin: 0px auto;width=700px;text-align: center;">
+      姓名:<input type="text" id="name" name="name"/>
+   Email:<input type="text" id="email" name="email"/>
+      电话:<input type="text" id="phone" name="phone"/>
+    <button id="addUser">提交</button>   
+    <br><br>
+    <hr>
+    <br><br>
+    <table align="center" id="usertable" border="1" cellpadding="5" cellspacing="0">
+           <thead>
+	           <tr>
+	             <th>姓名</th>
+	             <th>email</th>
+	             <th>电话</th>
+	             <th>操作</th>
+	           </tr>
+           </thead>
+           <tbody>
+           <tr>
+             <td>Tom</td>
+             <td>tom@tom.com</td>
+             <td>5000</td>
+             <td><a >Delete</a></td>
+           </tr>
+           <tr>
+             <td>Jerry</td>
+             <td>jerry@163.com</td>
+             <td>1200</td>
+             <td><a >Delete</a></td>
+           </tr>
+           </tbody>
+    </table>
+    </div>
+  </body>
+</html>

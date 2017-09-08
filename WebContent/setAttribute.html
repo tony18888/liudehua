@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>replaceNode.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+     您喜欢的城市:<br>
+     <ul>
+       <li id="bj" value="beijing">北京</li>
+       <li id="sh" value="shanghai">上海</li>
+       <li id="cq" value="chongqing">重庆</li>
+     </ul>
+  您喜欢的游戏:<br>
+      <ul>
+         <li id="fk" value="fankong">反恐<p>精英</p></li>
+         <li id="ms" value="moshou">魔兽</li>
+         <li id="cqsj" value="chuanqi">传奇</li>
+      </ul>
+  </body>
+  <script type="text/javascript">
+      //给这个<li id="cq" value="chuanqi">传奇</li>元素节点增加一个属性name="chuanqi"
+        //1.找到<li>标签
+       var cqsj= document.getElementById("cqsj");
+    alert(cqsj.getAttribute("name"));      
+        //2.给该元素节点设置属性name
+        cqsj.setAttribute("name","chuanqishijie");
+      
+    alert(cqsj.getAttribute("name"));      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  </script>
+</html>

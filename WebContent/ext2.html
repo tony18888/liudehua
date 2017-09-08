@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ext2.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+     您的爱好很广泛!!!
+     <br>
+     <input type="checkbox" name="chekcItems" value="全选/全不选"/>全选/全不选
+     <br>
+     <input type="checkbox" name="items" value="足球" checked="checked"/>足球
+     <input type="checkbox" name="items" value="篮球"/>篮球
+     <input type="checkbox" name="items" value="游泳"/>游泳
+     <input type="checkbox" name="items" value="唱歌"/>唱歌
+     <br>
+     <input type="button" name="checkall" id="checkall" value="全选"/>
+     <input type="button" name="checkall" id="checknotall" value="全不选"/>
+     <input type="button" name="checkall" id="checkreverse" value="反选"/>
+     <script type="text/javascript">
+                 var items=document.getElementsByName("items");
+                 document.getElementById("checkall").onclick=function(){
+                	   for(var i=0;i<items.length;i++){
+                		      items[i].checked=true;
+                	   }
+                 }     
+                 document.getElementById("checknotall").onclick=function(){
+                	   for(var i=0;i<items.length;i++){
+                		      items[i].checked=false;
+                	   }
+                 }     
+                 document.getElementById("checkreverse").onclick=function(){
+                	   for(var i=0;i<items.length;i++){
+                		      items[i].checked=!items[i].checked;
+                	   }
+                 }  
+                 
+                 document.getElementsByName("chekcItems")[0].onclick=function(){
+                	 for(var i=0;i<items.length;i++){
+                		 items[i].checked=this.checked;
+                	 }
+                 }
+                 
+                
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+     </script>
+     
+  </body>
+</html>
